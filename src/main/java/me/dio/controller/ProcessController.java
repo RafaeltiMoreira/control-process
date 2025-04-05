@@ -25,20 +25,6 @@ public class ProcessController {
     return ResponseEntity.ok(process);
   }
 
-  @GetMapping
-  public ResponseEntity<List<Process>> findByStatusOrResponsavel(
-          @RequestParam(required = false) String status,
-          @RequestParam(required = false) String responsavel) {
-
-    if (status != null) {
-      return ResponseEntity.ok(processService.findByStatus(status));
-    } else if (responsavel != null) {
-      return ResponseEntity.ok(processService.findByResponsavel(responsavel));
-    }
-
-    return ResponseEntity.badRequest().build();
-  }
-
   @PostMapping
   public ResponseEntity<Process> create(@RequestBody Process processToCreate) {
     var createdProcess = processService.create(processToCreate);
