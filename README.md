@@ -5,30 +5,16 @@ Projeto Java RESTful API - Avanade Decola Tech 2025
 
 ```mermaid
 classDiagram
-    class User {
-        +Process[] processes
-        +AvailableOptions availableOptions
-    }
-
     class Process {
-        +String id
-        +String title
-        +String management
+        +Long id
+        +String numeroProcesso
+        +String titulo
+        +String gerencia
         +String status
-        +String priority
-        +String creationDate
-        +String dueDate
-        +String responsible
-        +String description
+        +String prioridade
+        +LocalDateTime dataCriacao
+        +LocalDateTime dataVencimento
+        +String responsavel
+        +String descricao
     }
-
-    class AvailableOptions {
-        +String[] titles
-        +String[] managements
-        +String[] statuses
-        +String[] priorities
-    }
-
-    User "1" *-- "1" Process
-    User "1" *-- "N" AvailableOptions
 ```
