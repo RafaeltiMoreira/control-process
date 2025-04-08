@@ -72,3 +72,6 @@ classDiagram
     }
 }
 ```
+## Documentação da API (Swagger)
+
+### [https://web-production-c49d.up.railway.app/swagger-ui.html](https://web-production-c49d.up.railway.app/swagger-ui.html)
