@@ -2,25 +2,21 @@ package me.dio.domain.model;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
-
 @Entity(name = "tb_process")
 public class Process {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String numeroProcesso;
-  private String titulo;
-  private String gerencia;
-  private String status;
-  private String prioridade;
-  private LocalDateTime dataCriacao;
-  private LocalDateTime dataVencimento;
-  private String responsavel;
+  @Column(unique = true)
+  private String number;
 
-  @Column(length = 1000)
-  private String descricao;
+  private Integer dateAttribution;
+  private Integer dateExpiration;
+
+  @Column(name = "days_limit")
+  private Integer limit;
 
   public Long getId() {
     return id;
@@ -30,75 +26,35 @@ public class Process {
     this.id = id;
   }
 
-  public String getNumeroProcesso() {
-    return numeroProcesso;
+  public String getNumber() {
+    return number;
   }
 
-  public void setNumeroProcesso(String numeroProcesso) {
-    this.numeroProcesso = numeroProcesso;
+  public void setNumber(String number) {
+    this.number = number;
   }
 
-  public String getTitulo() {
-    return titulo;
+  public Integer getDateAttribution() {
+    return dateAttribution;
   }
 
-  public void setTitulo(String titulo) {
-    this.titulo = titulo;
+  public void setDateAttribution(Integer dateAttribution) {
+    this.dateAttribution = dateAttribution;
   }
 
-  public String getGerencia() {
-    return gerencia;
+  public Integer getDateExpiration() {
+    return dateExpiration;
   }
 
-  public void setGerencia(String gerencia) {
-    this.gerencia = gerencia;
+  public void setDateExpiration(Integer dateExpiration) {
+    this.dateExpiration = dateExpiration;
   }
 
-  public String getStatus() {
-    return status;
+  public Integer getLimit() {
+    return limit;
   }
 
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public String getPrioridade() {
-    return prioridade;
-  }
-
-  public void setPrioridade(String prioridade) {
-    this.prioridade = prioridade;
-  }
-
-  public LocalDateTime getDataCriacao() {
-    return dataCriacao;
-  }
-
-  public void setDataCriacao(LocalDateTime dataCriacao) {
-    this.dataCriacao = dataCriacao;
-  }
-
-  public LocalDateTime getDataVencimento() {
-    return dataVencimento;
-  }
-
-  public void setDataVencimento(LocalDateTime dataVencimento) {
-    this.dataVencimento = dataVencimento;
-  }
-
-  public String getResponsavel() {
-    return responsavel;
-  }
-
-  public void setResponsavel(String responsavel) {
-    this.responsavel = responsavel;
-  }
-
-  public String getDescricao() {
-    return descricao;
-  }
-
-  public void setDescricao(String descricao) {
-    this.descricao = descricao;
+  public void setLimit(Integer limit) {
+    this.limit = limit;
   }
 }
