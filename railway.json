@@ -1,12 +1,6 @@
 {
   "build": {
-    "builder": "nixpacks",
-    "config": {
-      "nixpacks": {
-        "language": "java",
-        "jdkVersion": "21"
-      }
-    }
+    "builder": "nixpacks"
   },
   "deploy": {
     "startCommand": "java -jar build/libs/control-process-0.0.1-SNAPSHOT.jar"
